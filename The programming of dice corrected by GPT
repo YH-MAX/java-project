@@ -1,0 +1,49 @@
+
+
+package com.mycompany.mavenproject9;
+
+import java.util.Scanner;
+public class Mavenproject9 {
+
+    public static void main(String[] args) {
+       System.out.println("Dice game Start!");
+       
+       int sum1 = 0;
+       int sum2 = 0;
+       while (true){
+           System.out.println("Player 1: ");
+           int dicenum1 = (int)(Math.random()*7);
+           System.out.println(dicenum1);
+           sum1 += dicenum1;
+           
+           while (dicenum1 == 6){
+               System.out.println("Player 1 rolled a 6! Rolling again...");
+               dicenum1 = (int)(Math.random()*7);
+               System.out.println("Player 1's extra roll: " + dicenum1);
+               sum1 += dicenum1;
+           }
+           if (sum1>=100){
+            System.out.println("Player 1 wins with a score of " + sum1 + "!");
+                break;
+           }  //上面全是写的player1的内容 下面开始player2
+            
+           
+           System.out.println("Player2's number of dice!");
+            int dicenum2 = (int)(Math.random()*7);
+            System.out.println("Player2's dice is" + dicenum2);
+            sum2 +=dicenum2; 
+            while (dicenum2==6){
+              System.out.println("Player2's do the dice again!!!!");
+              dicenum2 = (int)(Math.random()*7);
+              System.out.println("Player2's dice number is " + dicenum2);
+              sum2 += dicenum2;
+            }
+           if (sum2 >= 100){
+           System.out.println("Player2's number of dice!");
+           break;
+           }  
+           System.out.println("Game over");
+       }
+       }
+    }
+

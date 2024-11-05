@@ -1,0 +1,26 @@
+import java.util.Random;
+
+public class NumberLength {
+
+    public static void main(String[] args) {
+        Random g = new Random();
+        int num = g.nextInt(); // 生成一个随机整数
+        
+        int length = getNumberLength(num);
+        System.out.println("Random number: " + num);
+        System.out.println("Length of the number: " + length);
+    }
+
+    public static int getNumberLength(int number) {
+        // 如果 number 为 0，直接返回长度 1
+        if (number == 0) {
+            return 1;
+        }
+        
+        // 取绝对值来处理负数
+        number = Math.abs(number);
+        
+        // 计算位数
+        return String.valueOf(number).length();
+    }
+}

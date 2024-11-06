@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int input;
+
+        System.out.println("请输入一个数字（输入-1结束循环）：");
+
+        while (true) {
+            input = scanner.nextInt();
+
+            if (input == -1) {
+                System.out.println("循环结束");
+                break;
+            }
+
+            System.out.println("你输入了：" + input);
+        }
+
+        scanner.close();
+    }
+}

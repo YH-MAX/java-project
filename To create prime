@@ -30,11 +30,11 @@ public class Mavenproject11 {
     }
 
     // 判断一个数是否是质数的辅助方法
-    public static boolean isPrime(int num) {
-        if (num < 2) return false;
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) return false;
+    public static boolean isPrime(int num) {   //创建一个方法返回值是boolean isPrime是方法名
+        if (num < 2) return false;             //素数是大于一的数 一旦不符合<2就返回false 在main中结束if进行else
+        for (int i = 2; i <= Math.sqrt(num); i++) {    //这里用到了判断是否是素数的方法  若一个数是素数那么对于其的平方来说必有一个数在<Math.sqrt 中只用判断在<Math.sqrt中有这样一个数就可以
+            if (num % i == 0) return false;      //在这里发现了这样一个数结束返回false 进行else
         }
-        return true;
+        return true;     // if条件的都没发生返回true
     }
 }

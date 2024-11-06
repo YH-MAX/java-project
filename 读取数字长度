@@ -24,3 +24,25 @@ public class NumberLength {
         return String.valueOf(number).length();
     }
 }
+//Stgring.valueOf(variable).length()的用法
+/*int number = 12345;
+int length = String.valueOf(number).length();
+System.out.println("The length of the number is: " + length); */ // 输出 5
+
+
+//对负数的处理
+/*int number = -12345;      //括号内永远是变量
+int length = String.valueOf(Math.abs(number)).length();
+System.out.println("The length of the number is: " + length);*/  
+// 输出 5
+
+//用String.valueOf(variable).length();来计算数字长度
+String.valueOf(variable)是将数字转换为字符串形式。
+.length()在字符串上调用length()方法来获取字符串的字符数， 及数字的位数
+
+int number = 12345;
+int length = String.valueOf(number).length();
+System.out.println(.....)
+
+
+

@@ -1,0 +1,39 @@
+package com.mycompany.viva5;
+import java.util.Scanner;
+
+public class Viva5 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your song: ");
+        String song = scanner.nextLine();
+        
+        // 获取 "REMIX" 的第一次和最后一次出现的位置
+        int firstRemix = song.indexOf("REMIX");
+        int lastRemix = song.lastIndexOf("REMIX");
+        int length = song.length();
+
+        // 判断是否符合条件
+        if (firstRemix > 0 && length < 200) {
+            // 输出第一次 "REMIX" 之前的内容
+            System.out.println(song.substring(0, firstRemix));
+            
+            // 输出每个 "REMIX" 间隔中的内容
+            int start = firstRemix;                        //start 与我的那个赋值相同firstRemix=k
+            int nextRemix;  //nextRemix=fanhui
+            while ((nextRemix = song.indexOf("REMIX", start + 5)) != -1) {      //while ((fanhui = song.indexOf("REMIX", k + 5)) ！= 1)//因为REMIX是五个字符串
+                System.out.println(song.substring(start + 5, nextRemix));
+                start = nextRemix;
+            }
+
+            // 输出最后一个 "REMIX" 之后的内容
+            if (lastRemix + 5 < length) {                                 //等价于我的 if(g + 5 < length)
+                System.out.println(song.substring(lastRemix + 5));      // 我写的是System.out.println(song.substring(g+5))
+            }
+        } else {
+            System.out.println("Do this again!");
+        }
+        
+        scanner.close();
+    }
+}

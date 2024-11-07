@@ -1,0 +1,35 @@
+package com.mycompany.viva5;
+import java.util.Scanner;
+
+public class Viva5 {
+
+    public static void main(String[] args) {
+        Scanner str = new Scanner(System.in);
+        System.out.println("Enter your song: ");
+        String song = str.nextLine();
+        
+        //用indexOf()D读取第一次出现的remix位置的数
+        int k = song.indexOf("REMIX");
+        int g = song.lastIndexOf("REMIX");
+//来计算这个song的总长度
+        int length = song.length();
+        int fanhui = 0;
+        if (k>0&&length<200){
+            System.out.println(song.substring(0, k));
+            while ((fanhui = song.indexOf("REMIX", k)) != -1){
+            
+            System.out.println(song.substring(k, fanhui));
+            
+            k = fanhui;
+            fanhui = song.indexOf("REMIX", k);        
+            }
+              
+        if (g < 195){
+            System.out.println(song.substring(g+4, length - 1));
+            }
+        //若g不满足if条件就直接进行上面那句话没有影响 
+        }
+        else{
+        System.out.println("Do this again!");
+        
+        }

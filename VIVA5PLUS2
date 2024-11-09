@@ -1,0 +1,15 @@
+
+
+package com.mycompany.viva5plus;
+import java.util.Scanner;
+public class VIVA5PLUS {
+
+   public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);    
+        System.out.println("Enter your song");
+        String song = input.nextLine();
+        System.out.println(song.replace("REMIX", " "));
+        }
+       
+   }
+

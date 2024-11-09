@@ -1,3 +1,5 @@
+
+
 package com.mycompany.viva6;
 import java.util.Scanner;
  
@@ -8,13 +10,12 @@ public class VIVA6 {
         System.out.println("Enter the number: ");
        
         int max = Integer.MIN_VALUE;
-        
+        int secondmax = Integer.MIN_VALUE;
         int countmax = 0;
         int countsecondmax = 0;
         int count3 = 0;
         int sum = 0; 
-        
-        int secondmax = 0;
+        boolean hasSecondMax = false;
 //循环终止输入
         while (true){
              int score = input.nextInt();
@@ -23,9 +24,12 @@ public class VIVA6 {
               }
              if (score>max) {
                  secondmax = max;
+                 countsecondmax = countmax;
                  max = score;//max是最大值     
-             countmax = 1;
-             countsecondmax = 0;
+                 
+                 countmax = 1;
+             
+             hasSecondMax = true;
              }
              else if (score == max){
                     countmax++;    
@@ -34,9 +38,11 @@ public class VIVA6 {
              else if (score > secondmax) {                           
                  secondmax = score;
                  countsecondmax = 1;
-            }
+                 hasSecondMax = true;
+             }
             else if(score == secondmax){
                  countsecondmax++;
+                 hasSecondMax = true;
             }
                 
                if (score < 0){
@@ -49,8 +55,15 @@ public class VIVA6 {
         
         System.out.print("The largest number is " + max); 
         System.out.println("The occurrence count of the largest number is " + countmax);        
+        if (hasSecondMax){
+        
+        
+        
         System.out.print("The second-largest number is " + secondmax);         
-        System.out.println("The occurrence count of the second-largest number is " + countsecondmax); 
+        System.out.println("The occurrence count of the second-largest number is " + countsecondmax);} 
+        else {
+            System.out.println("There's no secondmax number!");
+        }
         System.out.print("The total sum of all numbers is " + sum);
         if (count3 > 0){
         System.out.print("Negative number were entered");

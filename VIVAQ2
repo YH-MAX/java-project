@@ -1,0 +1,43 @@
+
+
+package com.mycompany.vivaq2;
+
+import java.util.Scanner;
+
+
+public class VIVAQ2 {
+
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+        System.out.println("Enter three numbers: ");
+       
+       int nnn = input.nextInt();
+       int aaa = input.nextInt();
+       int bbb = input.nextInt();
+     
+        int countstep = 0;
+        while (nnn != 1){
+          int step1 = 0;
+            if (nnn % aaa == 0){
+            step1 = nnn / aaa;
+            //countstep++;
+            
+        }else if(nnn % aaa != 0){
+            step1 = nnn - bbb;
+           // countstep++;
+        }
+        if (nnn != 1){
+            System.out.println(-1);
+            break;
+        }
+           nnn = step1;
+           countstep++;
+        }    
+         
+        System.out.println(countstep);   
+        
+    
+    }
+        
+    }
+

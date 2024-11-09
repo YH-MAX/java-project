@@ -1,0 +1,67 @@
+package com.mycompany.viva6;
+import java.util.Scanner;
+ 
+public class VIVA6 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+       
+        int max = Integer.MIN_VALUE;
+        
+        int countmax = 0;
+        int countsecondmax = 0;
+        int count3 = 0;
+        int sum = 0; 
+        
+        int secondmax = 0;
+//循环终止输入
+        while (true){
+             int score = input.nextInt();
+              if (score == 0){
+                 break;
+              }
+             if (score>max) {
+                 secondmax = max;
+                 max = score;//max是最大值     
+             countmax = 1;
+             countsecondmax = 0;
+             }
+             else if (score == max){
+                    countmax++;    
+             } 
+             
+             else if (score > secondmax) {                           
+                 secondmax = score;
+                 countsecondmax = 1;
+            }
+            else if(score == secondmax){
+                 countsecondmax++;
+            }
+                
+               if (score < 0){
+               count3 ++;
+               }
+                 
+                 
+                 sum += score;
+        }
+        
+        System.out.print("The largest number is " + max); 
+        System.out.println("The occurrence count of the largest number is " + countmax);        
+        System.out.print("The second-largest number is " + secondmax);         
+        System.out.println("The occurrence count of the second-largest number is " + countsecondmax); 
+        System.out.print("The total sum of all numbers is " + sum);
+        if (count3 > 0){
+        System.out.print("Negative number were entered");
+        
+        }
+        
+        else {
+        System.out.print("There's no negative number");
+        }
+        
+        
+        
+    } 
+}

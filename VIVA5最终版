@@ -17,17 +17,17 @@ public class Viva5 {
         int length = song.length();
         int fanhui = 0;
         if (k>0&&length<200){
-            System.out.println(song.substring(0, k));
+            System.out.println(song.substring(0, k) + " ");
             while ((fanhui = song.indexOf("REMIX", k+5)) != -1){
             
-            System.out.println(song.substring(k+5, fanhui));
+            System.out.print(song.substring(k+5, fanhui) + " ");
             
             k = fanhui;
             //fanhui = song.indexOf("REMIX", k);  这句多余忘记循环就会重新赋值      
             }
               
         if (g + 5 < length){
-            System.out.println(song.substring(g + 5));  //输出5之后的全部字符串
+            System.out.print(song.substring(g + 5));  //输出5之后的全部字符串
             }
         //若g不满足if条件就直接进行上面那句话没有影响 
         }
@@ -36,14 +36,14 @@ public class Viva5 {
         
             while ((fanhui = song.indexOf("REMIX", k+5)) != -1){
             
-            System.out.println(song.substring(k+5, fanhui));
+            System.out.print(song.substring(k+5, fanhui) + " ");
             
             k = fanhui;
             //fanhui = song.indexOf("REMIX", k);  这句多余忘记循环就会重新赋值      
             }
               
         if (g + 5 < length){
-            System.out.println(song.substring(g + 5));  //输出5之后的全部字符串
+            System.out.print(song.substring(g + 5));  //输出5之后的全部字符串
             }
         //若g不满足if条件就直接进行上面那句话没有影响 
         

@@ -17,7 +17,7 @@ public class Viva5 {
         int length = song.length();
         int fanhui = 0;
         if (k>0&&length<200){
-            System.out.println(song.substring(0, k) + " ");
+            System.out.print(song.substring(0, k) + " ");
             while ((fanhui = song.indexOf("REMIX", k+5)) != -1){
             
             System.out.print(song.substring(k+5, fanhui) + " ");

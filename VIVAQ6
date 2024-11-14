@@ -12,15 +12,15 @@ public class VIVA6 {
        
         int max = Integer.MIN_VALUE;//initialize the max to MIN_VALUE because in the next step we need to use it to store the largest number
         int secondmax = Integer.MIN_VALUE;//initialize the secondmax to MIN_VALUE it will store the secondmax number later
-        int countmax = 0;//this is used for count the occurences of max number it is innitialized to 0;
-        int countsecondmax = 0;//this is used for count the occurences of secondmax number it is innitialized to 0;
+        int countmax = 0;//this is used for counting the occurences of largest number it is innitialized to 0;
+        int countsecondmax = 0;//this is used for counting the occurences of second largest number it is innitialized to 0;
         int count3 = 0;//this will record whether a negative number is entered
-        int sum = 0; 
+        int sum = 0; //sum each score together 
         boolean hasSecondMax = false;//is a boolean that indicates if a ssecond largest number 
 //循环终止输入
         while (true){//the loop will continuesly perform the operation, until we enter a 0
              int score = input.nextInt();//allow user to enter a number 
-              if (score == 0){//this is used for end and skip the loop if 
+              if (score == 0){//this is used for end and skiping from the loop if 
                  break;//0 entered
               }
              if (score>max) {//using if-elseif structure to perform some conditions 
@@ -33,8 +33,8 @@ public class VIVA6 {
              
              hasSecondMax = true;//hasSecondMax is true, so the secondmax number exist
              }
-             else if (score == max){//condition2 score=max
-                    countmax++;  //count the number of max number  
+             else if (score == max){//condition2 score=max, it means the largest number begin to repeat
+                    countmax++;  //count the number of max number and countmax can store the number occurrences of max 
              } 
              
              else if (score > secondmax) {//condition3 score>secondmax                           
@@ -51,7 +51,7 @@ public class VIVA6 {
             }
                 
                if (score < 0){//using if strcture to check whether there exist a negative number
-               count3 ++;//if it does, then update count3
+               count3 ++;//if it does, then update count3, and it will store the occurrences of the negative number
                }
                  
                  

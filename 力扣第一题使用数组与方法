@@ -1,0 +1,32 @@
+package com.mycompany.likou;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class LIKOU {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter your target: ");
+        int target = input.nextInt();
+        
+        int[] nums = {2, 7, 11, 15}; // 示例数组
+        int[] result = twoSum(nums, target);  // 调用方法并传入参数
+        
+        if (result != null) {
+            System.out.println("Indices of the two numbers are: " + Arrays.toString(result));
+        } else {
+            System.out.println("No two numbers found with the specified target.");
+        }
+    }
+
+    public static int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i, j}; // 返回满足条件的两个数的索引
+                }
+            }
+        }
+        return null; // 如果找不到返回null
+    } 
+}

@@ -1,0 +1,39 @@
+
+package com.mycompany.likou;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class LIKOU {
+                      
+    public static void main(String[] args) {
+     Scanner input = new Scanner(System.in);
+        System.out.println("Enter the result of subtracktion you want: ");
+        int resultOfsubtract = input.nextInt();
+        int[] array = {3, 2, 1, 5, 4};
+        
+        int countnum = countKDifference(array, resultOfsubtract);   
+     
+        System.out.println(countnum);
+        
+        
+    }
+    public static int countKDifference(int[] array, int k){
+//k = resultOfsubtract
+      int count = 0;        
+for (int i = 0; i < array.length; i++){
+         for (int j = i + 1; j < array.length; j++){
+              
+               if (Math.abs(array[i] - array[j]) == k){
+               count++;
+               }
+         }
+        }
+         return count;
+    }
+       
+
+
+}
+
+
+ 

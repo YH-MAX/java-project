@@ -1,0 +1,81 @@
+package com.mycompany.likou;
+
+import java.util.Scanner;
+import java.util.Random;
+public class LIKOU {
+
+    public static void main(String[] args) {
+      //创建完了一个新数组
+      char[] array = creatArray();
+     //接下来是展示新数组
+     displayarray(array);
+    //接下来对数组进行计数
+     int[] countchar = CountCharacter(array);
+    //输出
+        System.out.println();
+    outputresult(countchar);
+    
+    }
+    public static char[] creatArray(){
+      Random generate = new Random();
+        int size = 100;
+      char[] creatarray = new char[size];
+      for (int i = 0; i < size; i++){
+          creatarray[i] = (char)('a' + generate.nextInt(26));
+      }
+      return creatarray;
+              
+    }
+public static void displayarray(char[] array){
+    for (int i = 0; i < array.length; i++){
+        if ((i + 1) % 20 == 0){
+            System.out.println(array[i]);
+        }
+        else
+            System.out.print(array[i] + " ");
+    }
+}
+public static int[] CountCharacter(char[] array){
+    int[] countchar = new int[26];
+    for (int i = 0; i < array.length; i++){
+        countchar[array[i] - 'a']++;
+    }
+      return countchar;  
+ 
+} 
+public static void outputresult(int[] countchar){
+    for (int i = 0; i < countchar.length; i++){
+        if ((i + 1) % 10 == 0)
+            System.out.println(countchar[i] + " " + (char)(i + 'a'));
+        else
+            System.out.print(countchar[i] + " " + (char)(i + 'a') + " ");
+    
+    
+    }
+
+
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+/*for (int i = 0; i < size; i++){
+          array[i] = (char)('a' + generate.nextInt(26));
+      }
+        System.out.println("Your random character is；");
+      for (int j = 0; j < size; j++){  
+        if ((j + 1) % 20 == 0){
+            System.out.println(array[j]);
+        }
+        else
+              System.out.print(array[j] + " ");
+      }*/

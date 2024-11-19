@@ -1,0 +1,85 @@
+//线性查找
+package com.mycompany.likou;
+
+import java.util.Scanner;
+import java.util.Random;
+public class LIKOU {
+
+    public static void main(String[] args) {
+    int[] list = {1, 3, 6, 2, 0};
+    int key = 6;
+    search(list, key);
+        
+    }
+   public static void search(int[] list, int key){
+    boolean found = false;
+    for (int i = 0; i < list.length; i++){
+    if (key == list[i]){
+        System.out.println(i);
+        found = true;
+        break;
+    }
+    
+    }
+        if (!found)
+        System.out.println(-1);
+   }
+
+}
+//二分查找
+package com.mycompany.likou;
+
+public class LIKOU {
+    public static void main(String[] args) {
+        int[] array = new int[100];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
+        }
+        displayArray(array);
+        
+        int key = 6;
+        int result = binarySearch(array, key, 0, array.length - 1);
+        if (result != -1) {
+            System.out.println("Key " + key + " found at index: " + result);
+        } else {
+            System.out.println("Key " + key + " not found in the array.");
+        }
+    }
+
+    public static int binarySearch(int[] array, int key, int low, int high) {
+        if (low > high) {
+            return -1; // 递归终止条件
+        }
+        int middle = low + (high - low) / 2; // 防止溢出的优化写法
+        if (array[middle] == key) {
+            return middle; // 找到目标，返回索引
+        } else if (array[middle] > key) {
+            return binarySearch(array, key, low, middle - 1);
+        } else {
+            return binarySearch(array, key, middle + 1, high);
+        }
+    }
+
+    public static void displayArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if ((i + 1) % 20 == 0) {
+                System.out.println(array[i]);
+            } else {
+                System.out.print(array[i] + " ");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

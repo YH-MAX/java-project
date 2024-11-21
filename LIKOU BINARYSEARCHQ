@@ -1,0 +1,66 @@
+Q1
+package com.mycompany.likou;
+
+import java.util.Scanner;
+import java.util.Random;
+import java.util.Arrays;
+public class LIKOU {
+
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+        System.out.println("Enter the size of the nums1: ");
+    int m = input.nextInt();
+    int[] nums1 = new int[m];
+        System.out.println("Enter the size of the nums2: ");
+    int n = input.nextInt();
+    int[] nums2 = new int[n];
+        System.out.println("Enter the element in nums1: ");
+    for (int i = 0; i < nums1.length; i++){
+        System.out.print("Element" + (i + 1) + "is: ");
+        nums1[i] = input.nextInt();
+    }
+        System.out.println("Enter the element in nums2: ");
+    for (int i = 0; i < nums2.length; i++){
+        System.out.print("Element" + (i + 1) + "is: ");
+        nums2[i] = input.nextInt();
+    }
+    
+    double median = searchMidnum(nums1, nums2);
+        System.out.println("The median is: " + median);   
+    }
+   public static double searchMidnum(int[] nums1, int[] nums2){
+        int[] merge = new int[nums1.length + nums2.length];
+        System.arraycopy(nums1, 0, merge, 0, nums1.length);
+        System.arraycopy(nums2, 0, merge, nums1.length, nums2.length);
+        System.out.println("Display the merged array before sort: " + Arrays.toString(merge));
+        int[] sortedmerge = ToSort(merge);
+        
+        int low = 0;
+        int high = sortedmerge.length - 1;
+        if (sortedmerge.length % 2 != 0){
+            int middle = low + (high - low) / 2;
+            return sortedmerge[middle];
+        }
+        else{
+            int middle1 = sortedmerge.length / 2 - 1;
+            int middle2 = sortedmerge.length / 2;
+            return (sortedmerge[middle1] + sortedmerge[middle2]) / 2.0;
+        }
+            
+   }
+   public static int[] ToSort(int[] merge){
+       int temp = 0; 
+       for (int i = 0; i < merge.length; i++){
+            for (int j = i + 1; j < merge.length; j++){
+                if (merge[i] > merge[j]){
+                    temp = merge[j];
+                    merge[j] = merge[i];
+                    merge[i] = temp;
+                }
+            }
+        }
+        return merge;
+   
+   
+   }
+}
